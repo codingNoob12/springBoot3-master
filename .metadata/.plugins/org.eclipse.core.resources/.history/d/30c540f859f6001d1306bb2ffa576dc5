@@ -1,0 +1,8 @@
+package com.in28minutes.rest.webservices.restfulwebservicestodo.jwt;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class JwtAuthenticationController {
+
+}

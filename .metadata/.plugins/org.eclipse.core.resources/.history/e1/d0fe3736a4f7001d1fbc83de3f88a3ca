@@ -1,0 +1,22 @@
+package com.in28minutes.mockito.mockitodemo.business;
+
+public class SomeBusinessImpl {
+
+	private DataService dataService;
+	
+	public int findTheGreatestFromAllData() {
+		int[] data = dataService.retrieveAllData();
+		int greatesValue = Integer.MIN_VALUE;
+		for (int value : data) {
+			if (greatesValue < value) {
+				greatesValue = value;
+			}
+		}
+		return greatesValue;
+	}
+	
+}
+
+interface DataService {
+	int[] retrieveAllData();
+}

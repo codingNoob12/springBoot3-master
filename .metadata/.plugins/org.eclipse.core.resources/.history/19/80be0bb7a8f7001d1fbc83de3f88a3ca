@@ -1,0 +1,11 @@
+package com.in28minutes.mockito.mockitodemo.list;
+
+import org.junit.jupiter.api.Test;
+
+public class ListTest {
+
+	@Test
+	void test() {
+		
+	}
+}

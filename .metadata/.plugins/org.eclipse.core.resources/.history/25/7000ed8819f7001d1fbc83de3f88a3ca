@@ -1,0 +1,24 @@
+package com.in28minutes.junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MyMathTest {
+	
+	private MyMath math = new MyMath();
+
+	@Test
+	void test() {
+		int expectedResult = 6;
+		assertEquals(expectedResult, math.calculateSum(new int[] {1, 2, 3}));
+	}
+	
+	@Test
+	void test1() {
+		int result = math.calculateSum(new int[] {});
+		int expectedResult = 0;
+		assertEquals(expectedResult, result);
+	}
+
+}

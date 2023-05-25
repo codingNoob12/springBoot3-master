@@ -1,0 +1,8 @@
+1684332052106	Extract local variable 'predicate'
+1684332234642	Extract local variable 'filter'
+1684408049147	Rename type 'TodoController'
+1684485089928	Rename type 'SpringSecurityConfiguration'
+1684486833292	Delete element
+1684511719273	Delete elements
+1684511782908	Rename package 'com.in28minutes.rest.webservices.restfulwebservices.jwt'
+1684565648817	Copy compilation unit

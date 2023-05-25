@@ -1,0 +1,5 @@
+package com.in28minutes.learnspringsecurity.jwt;
+
+public class JwtAuthenticationResource {
+
+}

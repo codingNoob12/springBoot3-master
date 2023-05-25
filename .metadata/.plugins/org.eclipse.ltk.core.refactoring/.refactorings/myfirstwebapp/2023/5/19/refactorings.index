@@ -1,0 +1,28 @@
+1683544110136	Delete element
+1683544472910	Rename resource 'welcom.jsp'
+1683557033173	Delete element
+1683557237264	Rename resource 'login.jsp'
+1683557293309	Rename resource 'loginPage.jsp'
+1683560188736	Extract local variable 'username'
+1683565750455	Move 'listTodos.jsp' to 'WEB-INF'
+1683565753225	Move 'listTodos.jsp' to 'jsp'
+1683565755240	Move 'login.jsp' to 'WEB-INF'
+1683565756985	Move 'login.jsp' to 'jsp'
+1683565844811	Move 5 resources to 'WEB-INF'
+1683565848498	Move 5 resources to 'jsp'
+1683630938146	Copy file
+1683630952318	Copy file
+1683630963665	Rename resource 'footer.jsp'
+1683630977356	Delete elements
+1683630996675	Copy file
+1683631002235	Copy file
+1683636504004	Delete element
+1683642060469	Inline local variable 'username'
+1683642706474	Extract method 'getLoggedInUsername'
+1683700819195	Extract local variable 'username'
+1683700831080	Extract local variable 'password'
+1683700871960	Extract method 'extracted'
+1683700917355	Inline local variable 'username'
+1683700920704	Inline local variable 'password'
+1683720059275	Copy compilation unit
+1683804122313	Move source folder

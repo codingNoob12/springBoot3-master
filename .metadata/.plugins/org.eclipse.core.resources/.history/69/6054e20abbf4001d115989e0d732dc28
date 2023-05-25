@@ -1,0 +1,19 @@
+package com.in28minutes.rest.webservices.restfulwebservicestodo.todo;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TodoService {
+
+	private static List<Todo> todos = new ArrayList<>();
+	
+	private static int todosCount = 0;
+	
+	static {
+		todos.add(new Todo(++todosCount, "in28minutes", "Get AWS Certified", LocalDate.now().minusYears(10), false));
+	}
+}

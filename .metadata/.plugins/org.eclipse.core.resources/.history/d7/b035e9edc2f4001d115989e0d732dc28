@@ -1,0 +1,16 @@
+package com.in28minutes.rest.webservices.restfulwebservicestodo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RestfulWebServicesTodoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RestfulWebServicesTodoApplication.class, args);
+	}
+
+	//http://localhost:3000/ to 8080
+	//Cross Orgin Request
+	//Allow all requests only from http://localhost:3000/
+}

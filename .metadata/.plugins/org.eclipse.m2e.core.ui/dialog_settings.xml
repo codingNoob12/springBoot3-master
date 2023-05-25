@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/learn-spring-security"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/mockito-demo"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/restful-web-services-todo"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/01-rest-api-starting-code"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/restful-web-services"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/myfirstwebapp"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/learn-jpa-and-hibernate"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/learn-spring-boot"/>
+			<item value="/Users/seoilhyeon/Documents/Java/spring/work/learn-spring-framework"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

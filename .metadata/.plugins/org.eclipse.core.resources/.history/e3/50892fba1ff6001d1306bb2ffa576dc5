@@ -1,0 +1,8 @@
+package com.in28minutes.rest.webservices.restfulwebservicestodo.basic;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class BasicAuthenticationSecurityConfiguration {
+
+}

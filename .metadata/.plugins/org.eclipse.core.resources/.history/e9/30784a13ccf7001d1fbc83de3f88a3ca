@@ -1,0 +1,17 @@
+package com.in28minutes.learnspringsecurity.resources;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TodoResource {
+
+	@GetMapping("/todos")
+	public String retrieveAllTodos() {
+		return List.of()
+	}
+}
+
+record Todo (String username, String description) {}

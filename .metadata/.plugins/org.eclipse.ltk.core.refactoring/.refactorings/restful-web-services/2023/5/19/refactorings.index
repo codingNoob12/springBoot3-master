@@ -1,0 +1,21 @@
+1683867286103	Rename type 'UserService'
+1683867490138	Extract local variable 'predicate'
+1683867864740	Rename field 'userDaoService'
+1683867869600	Rename local variable 'userDaoService'
+1683867892108	Rename type 'UserController'
+1683873117026	Extract local variable 'findOne'
+1683878898355	Extract local variable 'filter'
+1683963636987	Copy file
+1683963769954	Copy file
+1683963788536	Copy file
+1683965137311	Delete element
+1683986562340	Extract local variable 'someBean'
+1683987392037	Extract local variable 'asList'
+1683987776962	Rename local variable 'someBeanList'
+1683987948960	Extract local variable 'string'
+1683987979173	Extract local variable 'string'
+1683987996103	Extract method 'extracted'
+1683988040715	Inline local variable 'field2'
+1683988044449	Inline local variable 'field3'
+1683988184709	Rename method 'createFilter'
+1683988281636	Rename method 'createFilters'

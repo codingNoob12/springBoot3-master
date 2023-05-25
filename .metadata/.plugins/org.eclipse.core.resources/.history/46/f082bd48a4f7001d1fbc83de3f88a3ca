@@ -1,0 +1,24 @@
+package com.in28minutes.mockito.mockitodemo.business;
+
+// serv 역할
+public class SomeBusinessImpl {
+
+	private DataService dataService;
+	
+	public int findTheGreatestFromAllData() {
+		int[] data = dataService.retrieveAllData();
+		int greatesValue = Integer.MIN_VALUE;
+		for (int value : data) {
+			if (greatesValue < value) {
+				greatesValue = value;
+			}
+		}
+		return greatesValue;
+	}
+	
+}
+
+// repo역할
+interface DataService {
+	int[] retrieveAllData();
+}

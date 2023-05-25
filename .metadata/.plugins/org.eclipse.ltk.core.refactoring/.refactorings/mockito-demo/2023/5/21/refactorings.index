@@ -1,0 +1,4 @@
+1684652421723	Extract local variable 'dataServiceStub'
+1684652847502	Rename type 'SomeBusinessImplTest'
+1684652865195	Copy compilation unit
+1684653132602	Inline local variable 'result'

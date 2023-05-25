@@ -1,0 +1,64 @@
+package com.in28minutes.rest.webservices.restfulwebservicestodo.jwt;
+
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class JwtSecurityConfig {
+
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		return http.authorizeHttpRequests(
+				auth -> auth.requestMatchers("/authenticate").permitAll()
+				.requestMatchers(PathRequest.toH2Console()).permitAll()
+				.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+				.anyRequest().authenticated()
+				)
+		.csrf(AbstractHttpConfigurer::disable)
+		.sessionManagement(
+				session -> session
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+		.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+		.httpBasic(Customizer.withDefaults())
+		.headers(header -> header.frameOptions().sameOrigin())
+		.build();
+	}
+	
+	@Bean
+	public AuthenticationManager authenticationManager(
+			UserDetailsService userDetailsService) {
+		var authenticationProvider = new DaoAuthenticationProvider();
+		authenticationProvider.setUserDetailsService(userDetailsService);
+		return new ProviderManager(authenticationProvider);
+	}
+	
+	@Bean
+	public UserDetailsService userDetailsService() {
+		UserDetails user = User.withUsername("in28minutes")
+				.password("{noop}dummy")
+				.authorities("read")
+				.roles("USER")
+				.build();
+		
+		return new InMemoryUserDetailsManager(user);
+	}
+}
