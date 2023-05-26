@@ -1,0 +1,5 @@
+package com.in28minutes.learnoauth;
+
+public class HelloWorldResource {
+
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.buildship.ui.wizard.project.import">
-		<item key="project_location" value="/Users/seoilhyeon/Documents/Java/spring/work/learn-spring-security"/>
+		<item key="project_location" value="/Users/seoilhyeon/Documents/Java/spring/work/learn-spring-aop"/>
 	</section>
 </section>
