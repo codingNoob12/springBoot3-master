@@ -4,11 +4,16 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.annotation.security.RolesAllowed;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
@@ -25,7 +30,20 @@ public class TodoResource {
 		return TODOS_LIST;
 	}
 	
+	// Pre, Post 조건을 만족하지 않으면 403에러
 	@GetMapping("/users/{username}/todos")
+	// 함수 실행 전에 처리
+	// 역할이 USER이고 인증헤더의 이름이 username 파라미터와 동일해야함
+	// 오직 자신의 리소스에만 접근 가능
+	@PreAuthorize("hasRole('USER') and #username == authentication.name")
+	// 함수가 종료될 때 처리
+	// 리턴되는 객체의 username이 'in28minutes'와 동일해야함
+	@PostAuthorize("returnObject.username == 'in28minutes'")
+	//JSR-250 자바 표준 어노테이션
+	@RolesAllowed({"ADMIN", "USER"}) // 허용되는 역할을 지정할 수 있음
+	//Secured 어노테이션
+	@Secured({"ROLE_ADMIN", "ROLE_USER"}) // 허용되는 역할을 지정할 수 있음 (RolesAllowed와 비슷)
+											// DB에 저장되는 값으로 정확히 매핑함
 	public Todo retrieveAllTodosForSpecificUser(@PathVariable String username) {
 		return TODOS_LIST.get(0);
 	}

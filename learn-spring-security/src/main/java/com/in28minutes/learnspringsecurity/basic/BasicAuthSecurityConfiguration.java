@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
@@ -18,12 +19,21 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+//@EnableMethodSecurity // 메서드 보안 (Method Security) => 메서드에 Pre, Post 어노테이션
+//JSR-250, Secured 어노테이션 사용하려면 추가
+@EnableMethodSecurity(jsr250Enabled = true, securedEnabled = true)
 public class BasicAuthSecurityConfiguration {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		// 전역 보안 (Global Security)
 		http.authorizeHttpRequests(auth -> {
-			auth.anyRequest().authenticated();
+			auth
+			.requestMatchers("/users").hasRole("USER")
+			.requestMatchers("/admin/**").hasRole("ADMIN")
+			.anyRequest().authenticated();
+			// requestMatchers를 이용해서 인증 규칙 설정
+			// hasRole, HasAuhority, hasAnyAuthority, isAuthenticated 등
 		});
 		http.sessionManagement(session -> 
 			session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
