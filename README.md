@@ -88,3 +88,20 @@
   `Authorization` : `Basic aW4yOG1pbnV0ZXM6ZHVtbXk=`
 - ### 인증 헤더 (JWT Auth)
   `Authorization` : `Bearer ${token}`
+
+## learn-oauth
+
+### Oauth 기초, 실행시 application.properties에서 google client id와 secret을 설정해 줘야함
+
+```properties
+spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
+spring.security.oauth2.client.registration.google.client-secret=YOUR_SECRET
+```
+
+### 구글 클라우드의 콘솔에서 API 및 서비스탭에서 사용자 인증정보를 만들어야함
+
+- [구글 클라우드 콘솔 바로가기](https://console.cloud.google.com/)
+
+### 생성된 클라이언트 아이디와 시크릿으로 세팅하면 정상적으로 동작한다.
+
+# 주의) GitHub같은 public한 곳에 코드를 공개한다면 Oauth키가 노출될 수 있으니 주의하자
