@@ -1,5 +1,10 @@
 # Spring Boot 3 Master
 
+## Test용 계정 정보 (공통)
+
+- username : `in28minutes`
+- password : `dummy`
+
 ## myfirstwebapp
 
 - JSP와 Spring 생태계를 이용한 Todo 웹앱
