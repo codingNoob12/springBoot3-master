@@ -20,14 +20,54 @@
 ## restful-web-services
 
 - Spring 생태계를 이용한 간단한 SNS RestFul API
+
   ### MySQL Docker Container
+
   - Docker 명령어
+
   ```
   docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=social-media-user --env MYSQL_PASSWORD=dummypassword --env MYSQL_DATABASE=social-media-database --name mysql --publish 3306:3306 mysql:8-oracle
   ```
+
   ### 인증 헤더 (Basic Authentication)
+
   - `Authorization` : `Basic aW4yOG1pbnV0ZXM6ZHVtbXk=`
+
   #### InMemoryUserDetailsService 이용
+
+  ### RestFul API
+
+  #### Prefix : `http://localhost:8080/jpa`
+
+  1. #### User API
+
+  - 모든 user 가져오기 : `GET` `/users`
+  - user 생성하기 : `POST` `/users`
+    - JSON 예시
+    ```json
+    {
+      "name": "Ravi",
+      "birthDate": "1998-05-12"
+    }
+    ```
+  - user 1명 정보 가져오기 : `GET` `/users/${user_id}`
+  - user 삭제 : `DELETE` `/users/${user_id}`
+
+  2. #### Post API
+
+  - user 1명의 모든 post 가져오기 : `GET` `/users/${user_id}/posts`
+  - 특정 user의 post 생성 : `POST` `/users/${user_id}/posts`
+
+    - JSON 예시
+
+    ```json
+    {
+      "name": "Ravi v2",
+      "birthDate": "1998-05-12"
+    }
+    ```
+
+  - 특정 user의 특정 post 가져오기 : `GET` `/users/${user_id}/posts/${post_id}`
 
 # restful-web-services-todo
 
