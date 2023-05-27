@@ -1,0 +1,16 @@
+package com.in28minutes.learnspringaop.aopexample.aspects;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.context.annotation.Configuration;
+
+//Configuration
+//AOP
+@Configuration
+@Aspect
+public class LoggingAspect {
+
+	//Pointcut - when?
+	public void logMethodCall() {
+		// Logic - what?
+	}
+}

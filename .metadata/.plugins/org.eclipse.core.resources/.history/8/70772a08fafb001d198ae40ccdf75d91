@@ -1,0 +1,13 @@
+package com.in28minutes.learnspringaop.aopexample.aspects;
+
+import org.springframework.context.annotation.Configuration;
+
+//Configuration
+//AOP
+@Configuration
+public class LoggingAspect {
+
+	public void logMethodCall() {
+		// Logic
+	}
+}

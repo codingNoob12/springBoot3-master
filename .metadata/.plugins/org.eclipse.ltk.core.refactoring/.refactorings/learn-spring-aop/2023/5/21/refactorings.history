@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Inline local variable &apos;com.in28minutes.learnspringaop.LearnSpringAopApplication.run(...).max&apos; in &apos;com.in28minutes.learnspringaop.LearnSpringAopApplication.run(...)&apos;&#x0A;- Original project: &apos;learn-spring-aop&apos;&#x0A;- Original element: &apos;com.in28minutes.learnspringaop.LearnSpringAopApplication.run(...).max&apos;" description="Inline local variable &apos;max&apos;" id="org.eclipse.jdt.ui.inline.temp" input="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.in28minutes.learnspringaop{LearnSpringAopApplication.java" selection="808 0" stamp="1685128182574" version="1.0"/>
+</session>
