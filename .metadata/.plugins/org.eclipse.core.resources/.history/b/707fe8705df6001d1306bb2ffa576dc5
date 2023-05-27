@@ -1,8 +1,0 @@
-package com.in28minutes.rest.webservices.restfulwebservicestodo.jwt;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class JwtTokenService {
-
-}

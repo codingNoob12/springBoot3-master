@@ -7,15 +7,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.in28minutes.learnspringaop.aopexample.business.BusinessService1;
+import com.in28minutes.learnspringaop.aopexample.business.BusinessService2;
 
 @SpringBootApplication
 public class LearnSpringAopApplication implements CommandLineRunner {
 
-	private BusinessService1 businessService1;
 	private Logger logger = LoggerFactory.getLogger(getClass());
+	private BusinessService1 businessService1;
+	private BusinessService2 businessService2;
 	
-	public LearnSpringAopApplication(BusinessService1 businessService1) {
+	public LearnSpringAopApplication(BusinessService1 businessService1, 
+			BusinessService2 businessService2) {
 		this.businessService1 = businessService1;
+		this.businessService2 = businessService2;
 	}
 
 	public static void main(String[] args) {
@@ -24,7 +28,8 @@ public class LearnSpringAopApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("Value returned is {}", businessService1.calculateMax());
+		logger.info("businessService1 Value returned is {}", businessService1.calculateMax());
+		logger.info("businessService2 Value returned is {}", businessService2.calculateMin());
 	}
 
 }

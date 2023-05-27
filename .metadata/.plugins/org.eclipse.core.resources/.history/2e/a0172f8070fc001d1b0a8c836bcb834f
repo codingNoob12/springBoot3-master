@@ -1,0 +1,5 @@
+package com.in28minutes.learnspringaop.aopexample.aspects;
+
+public class CommonPointcut {
+
+}

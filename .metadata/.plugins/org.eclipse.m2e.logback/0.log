@@ -9983,3 +9983,4 @@ Caused by: java.nio.file.NoSuchFileException: /Users/seoilhyeon/Documents/Java/s
 2023-05-26 14:10:17,041 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
 2023-05-26 14:10:17,043 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/seoilhyeon/Documents/Java/spring/work/restful-web-services-todo/src/test/resources
 2023-05-26 19:11:55,835 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-05-27 17:54:58,333 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
