@@ -14,7 +14,7 @@ public class PerformanceTrackingAspect {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	// JoinPoint는 Advice의 객체 인스턴스이지만 실행에는 관여하지 못함 => ProceedingJoinPoint
-	@Around("execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))")
+	@Around("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
 	public Object findExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		//Starter a timer
 		long startTimeMillis = System.currentTimeMillis();

@@ -32,7 +32,10 @@ public class LoggingAspect {
 	//문법 : execution(* PACKAGE.*.*(..)) => return값과 함수를 지정
 	// 어느 패키지의 어떤 클래스의 어떤 함수인지 (괄호안에는 파라미터는 무엇인지)
 //	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.business.*.*(..))")
-	@Before("execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))")
+//	@Before("execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))")
+	@Before("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.allPackageConfigUsingBean()")
+	// 패키지 구조가 변경될 경우, 매번 모든 AOP의 포인트 컷을 변경하기 어려움 => 패키지 구조를 받아오는 공통관심사(Aspect)를 지정
+	// value로 포인트 컷을 지정한 경우... 기본적으로는 argNames로 가져옴
 	public void logMethodCallBeforeExecution(JoinPoint joinPoint) { // 특정 메서드 실행 : JoinPoint
 		// Logic - what?
 //		logger.info("Before Aspect - Method is called - {}", joinPoint);
@@ -40,13 +43,13 @@ public class LoggingAspect {
 				joinPoint, joinPoint.getArgs());
 	}
 	
-	@After("execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))")
+	@After("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessPackageConfig()")
 	public void logMethodCallAfterExecution(JoinPoint joinPoint) {
 		logger.info("After Aspect - {} has executed", joinPoint);
 	}
 	
 	@AfterThrowing(
-		pointcut = "execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))",
+		pointcut = "com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()",
 		throwing = "exception") // 예외발생시 예외는 throwing으로 주어진 이름으로 매핑
 	public void logMethodCallAfterException(JoinPoint joinPoint, Exception exception) {
 		logger.info("AfterThrowing Aspect - {} has thrown an exception {}", 
@@ -54,7 +57,7 @@ public class LoggingAspect {
 	}
 	
 	@AfterReturning(
-		pointcut = "execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))",
+		pointcut = "com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.dataPackageConfig()",
 		returning = "resultValue")
 	public void logMethodCallAfterSuccessfulExecution(JoinPoint joinPoint, Object resultValue) {
 		logger.info("AfterReturning Aspect - {} has returned {}", 

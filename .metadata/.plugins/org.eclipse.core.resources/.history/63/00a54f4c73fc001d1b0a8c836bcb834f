@@ -1,0 +1,19 @@
+package com.in28minutes.learnspringaop.aopexample.aspects;
+
+import org.aspectj.lang.annotation.Pointcut;
+
+// 포인트컷을 공통적으로 관리
+public class CommonPointcutConfig {
+
+	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.*.*.*(..))")
+	public void businessAndDataPackageConfig() {}
+	
+	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.business.*.*(..))")
+	public void businessPackageConfig() {}
+	
+	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.data.*.*(..))")
+	public void dataPackageConfig() {}
+	
+	@Pointcut("bean(*Service*)") // Service가 포함된 모든 빈을 포인트컷으로 등록
+	public void dataPackageConfigUsingBean() {}
+}
