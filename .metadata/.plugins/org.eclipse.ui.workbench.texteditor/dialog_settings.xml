@@ -10,8 +10,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="name"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="Before Aspect"/>
 			<item value="pass"/>
 			<item value="cors"/>
 			<item value="csrf"/>

@@ -16,4 +16,7 @@ public class CommonPointcutConfig {
 	
 	@Pointcut("bean(*Service*)") // 빈 이름의 패턴이 *Service*인 모든 빈을 포인트컷으로 지정
 	public void allPackageConfigUsingBean() {}
+	
+	@Pointcut("@annotation(com.in28minutes.learnspringaop.aopexample.annotations.TrackTime)")
+	public void trackTimeAnnotation() {}
 }

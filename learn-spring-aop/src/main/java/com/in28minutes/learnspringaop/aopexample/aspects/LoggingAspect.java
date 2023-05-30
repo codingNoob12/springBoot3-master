@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 //AOP 용어 정리
 // - Complie Time
 // 1. Advice : 실행할 코드
-// 2. Pointcut : 인터셉트할 메서드를 지정
+// 2. Pointcut : 인터셉트할 메서드를 지정 (정확히는 공통처리를 할 대상을 지정)
 // 3. Aspect : Advice + Pointcut => 언제 + 무엇을?
 // 4. Weaver : AOP를 구현하는 프레임워크 => AspectJ / Spring AOP
 // - Runtime
