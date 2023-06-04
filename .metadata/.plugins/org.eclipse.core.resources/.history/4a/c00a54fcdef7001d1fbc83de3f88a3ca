@@ -1,9 +1,0 @@
-spring.main.banner-mode=off
-logging.pattern.console=%d{MM-dd HH:mm:ss} - %logger{36} - %msg%n
-
-#InMemoryUserCredential
-# Only 1 Pair of username and password can be stored
-spring.security.user.name=in28minutes
-spring.security.user.password=dummy
-
-#server.servlet.session.cookie.same-site=strict
